@@ -1,0 +1,138 @@
+.slider {
+  position: relative;
+  top: -92px;
+  padding-bottom: 170px;
+  padding-top: 230px;
+  background: url(../img/slide1.png) no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+
+  &__item {
+
+    display: none;
+    flex-flow: column;
+    width: 590px;
+    margin: 0 auto;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  &__info {
+    margin-top: 75px;
+    font-family: 'MyriadPro';
+    font-size: 46px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__buttons {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  &__btn {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    width: 225px;
+    padding: 14px 0;
+    border: 1px solid rgba($color: #fff, $alpha: 0.25);
+    text-align: center;
+    text-decoration: none;
+    font-family: 'MyriadPro';
+    font-size: 18px;
+    color: #fff;
+    transform: perspective(1px) translateZ(0);
+    transition: color 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition-property: transform;
+      transition: 0.3s ease-out;
+    }
+
+    &:first-child::before {
+      transform-origin: 100% 50%;
+    }
+
+    &:hover {
+      color: #000;
+
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    
+    span {
+      width: 50px;
+      height: 2px;
+      background-color: #bab8b2;
+      opacity: 0.5;
+
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 30px;
+    
+    &_left {
+      left: 20px;
+      background: url(../img/arrow-left.png);
+    }
+
+    &_right {
+      right: 20px;
+      background: url(../img/arrow-right.png);
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .slider {
+    &__item {
+      width: 300px;
+    }
+    &__info {
+      font-size: 30px;
+    }
+  }
+}

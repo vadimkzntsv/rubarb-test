@@ -1,0 +1,73 @@
+.container {
+  max-width: 1290px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 10;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0.8;
+
+  &.active {
+    display: block;
+  }
+}
+
+.stop-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+.share {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  padding: 0;
+  list-style: none;
+  color: #fff;
+
+  &__item {
+    margin-bottom: 10px;
+
+    &:first-child {
+      font-family: "Geometria"; 
+      text-transform: uppercase;
+      transform-origin: left;
+      transform: translate(24px, -60px) rotate(90deg) ;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  &_dark {
+    color: #000;
+
+    a {
+      color: #000;
+      border: 1px solid #000;
+    }
+  }
+}

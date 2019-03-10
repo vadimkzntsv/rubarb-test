@@ -1,0 +1,314 @@
+main {
+  position: relative;
+}
+
+.intro {
+  position: relative;
+  padding-top: 145px;
+  margin-top: -92px;
+  font-family: "MyriadPro";
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  &__left {
+    position: sticky;
+    top: 20px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    min-width: 380px;
+
+    span {
+      margin-top: 18px;
+      color: #000;
+      font-size: 36px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+
+  &__right {
+    padding-left: 100px;
+
+    p {
+      margin: 0 0 30px;
+      font-size: 22px;
+    }
+  }
+
+  &__bordered {
+    @include border-animate(4px);
+    padding: 50px 130px;
+    margin: 110px 0;
+    font-size: 32px;
+  }
+  
+}
+
+.infographics {
+  padding: 70px 0 20px;
+  background-color: #f4f4f4;
+  color: #000;
+  
+  &__wrap {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 33%;
+    min-width: 270px;
+    margin-bottom: 30px;
+  }
+
+  &__logo {
+    text-align: center;
+    height: 225px;
+  }
+
+  &__info {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__number {
+    margin-right: 50px;
+    font-family: "MyriadPro";
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 80px;
+  }
+
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    width: 165px;
+  }
+
+  &__title {
+    font-family: "MyriadPro";
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-family: "Geometria";
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+.performance {
+  padding: 140px 0 220px;
+
+  &__title {
+    max-width: 830px;
+    margin: 0 auto 40px;
+    font-family: "MyriadPro";
+    font-size: 38px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+  }
+
+  &__item {
+    display: flex;
+
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__info {
+    position: relative;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+
+    &_right {
+      left: -40px;
+      align-items: flex-end;
+    }
+  }
+  
+  &__name {
+    @include border-animate(3px);
+    width: 470px;
+    padding: 52px 0;
+    font-family: "MyriadPro";
+    font-size: 36px;
+  }
+
+  &__descr {
+    width: 290px;
+    margin: 50px 0 0 40px;
+    font-family: "Geometria";
+    font-size: 24px;
+    font-weight: 300;
+    color: #000;
+
+    &_right {
+      margin: 50px 40px 0 0;
+      text-align: right;
+    }
+  }
+
+  &__link {
+    @include link-animate;
+    margin: 100px 0 0 40px;
+  
+    &_right {
+      margin: 100px 40px 0 0;
+    }
+  }
+}
+
+.contacts {
+  padding: 100px 0;
+  background: url(../img/contacts-bg.png) no-repeat;
+  background-size: cover;
+  color: #fff;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__info {
+    min-width: 245px;
+  }
+
+  &__title {
+    margin-bottom: 70px;
+    font-family: "MyriadPro";
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+    font-family: "MyriadPro";
+    font-size: 16px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+
+    .fas {
+      width: 15px;
+      margin-right: 20px;
+      color: #53d0fb;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width:1022px) {
+  .intro {
+    padding-top: 70px;
+    
+    &__wrap {
+      flex-direction: column;
+    }
+
+    &__left {
+      min-width: 250px;
+      max-width: 100%;
+      position: initial;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    &__right {
+      padding-left: 0;
+    }
+  }
+  .contacts {
+    &__info {
+      width: 100%;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      min-width: 170px;
+      width: 25px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .performance {
+    &__name {
+      padding: 25px 0;
+      width: 320px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .intro {
+    &__bordered {
+      padding: 30px 60px;
+    }
+  }
+
+  .performance {
+    
+    &__title {
+      font-size: 26px;
+    }
+
+    &__item {
+      flex-direction: column-reverse;
+
+      &:nth-child(odd) {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &__info {
+      left: 0;
+
+      &_right {
+        align-items: flex-start;
+      }
+    }
+
+    &__descr {
+      width: auto;
+    }
+
+    &__name {
+      width: 280px;
+      font-size: 32px;
+    }
+  }
+}
