@@ -51,12 +51,6 @@
 
 
 @mixin border-animate($width) {
-  position: relative;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  color: #000;
-
   &::before,
   &::after {
     content: '';

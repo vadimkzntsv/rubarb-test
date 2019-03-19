@@ -96,6 +96,11 @@
       height: 2px;
       background-color: #bab8b2;
       opacity: 0.5;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
 
       &:not(:last-child) {
         margin-right: 4px;
